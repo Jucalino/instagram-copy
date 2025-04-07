@@ -36,9 +36,12 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": {
+              "routesFile": "routes.txt",
+              "discoverRoutes": true
+            },
             "ssr": {
-              "entry": "src/server.ts"
+              "entry": "server.ts"
             }
           },
           "configurations": {
@@ -47,12 +50,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "2MB"
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "2MB"
+                  "maximumError": "4kB"
                 }
               ],
               "outputHashing": "all"
@@ -105,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "46cb5e84-5faf-4f7a-a283-05150cc21110"
+    "analytics": false
   }
 }
